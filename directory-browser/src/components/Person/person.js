@@ -7,7 +7,7 @@ const Person = props => {
 
     return (
         <React.Fragment>
-            <li id={ key }>
+            <li key={key}>
                 <h1>{ person.name }</h1>
                 <span> { person.title_cat }</span>
                 <p> { person.bio }</p>

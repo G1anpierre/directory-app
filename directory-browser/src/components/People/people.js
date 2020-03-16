@@ -12,9 +12,9 @@ const People = props => {
             <div className="results">
                 <ul>
                 {props.people.map( person => {
-                    console.log(person);
-                    return <Person key={person.id} person={person}/>
-                })
+                    
+                    return <Person key={person.key} id={person.key} person={person}/>
+                    })
                 }
                 </ul>
             </div>
