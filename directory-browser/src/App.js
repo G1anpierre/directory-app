@@ -64,6 +64,14 @@ class App extends React.Component {
     });
   }
 
+   resetFields = e =>{
+    this.setState({
+      currentName: "",
+      currentTitle: "",
+      isIntern: false
+    }, this.updatePeopleList)
+  }
+
 
   
   render() {
@@ -82,6 +90,7 @@ class App extends React.Component {
           handleNameChange={this.updateNameChange}
           handleTitleChange={this.updateTitleChange}
           handleInternChange={this.updateInternChange}
+          handleReset={this.resetFields}
         />
 
         <People people={this.state.people} />

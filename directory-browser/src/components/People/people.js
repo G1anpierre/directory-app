@@ -1,6 +1,7 @@
 import React from 'react';
 import Person from '../Person/person'
 import './people.scss';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 const People = props => {
@@ -11,12 +12,18 @@ const People = props => {
 
             <div className="results">
                 <ul>
+                <TransitionGroup>
                 {props.people.map( person => {
-                    
-                    return <Person key={person.key} id={person.key} person={person}/>
+                        return (
+                            <CSSTransition key={person.key} timeout={500} classNames="fade" >
+                                <Person  id={person.key} person={person}/>
+                            </CSSTransition>
+                        )
                     })
                 }
+                </TransitionGroup>
                 </ul>
+
             </div>
         </React.Fragment>
     )

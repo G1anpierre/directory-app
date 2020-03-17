@@ -30,6 +30,10 @@ const Filters = props => {
         props.handleInternChange(event);
     }
 
+    function onClickReset(event){
+        props.handleReset(event);
+    }
+
     return (
         <React.Fragment>
             <h1>Hello from filters</h1>
@@ -73,6 +77,9 @@ const Filters = props => {
                     <label className="form-check-label" htmlFor="defaultCheck1">
                         Intern
                     </label>
+                </div>
+                <div className="button-reset">
+                    <button className="btn btn-primary" type="button" onClick={onClickReset}>Reset Button</button>
                 </div>
             </form>
         </React.Fragment>
